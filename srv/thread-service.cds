@@ -1,6 +1,5 @@
 using { forum as frm } from '../db/schema';
 
-
 @path: 'service/thread'
 service ThreadService {
     entity Threads as projection on frm.Thread;

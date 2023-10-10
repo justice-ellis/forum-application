@@ -8,11 +8,6 @@ module.exports = (srv) => {
         const { Thread, Answer } = tx.entities
         const [thread, _] = await tx.read(Thread).where({ ID })
         if (!thread) {
-            // return {
-            //     code: 404,    
-            //     message: "thread not found",
-            //     status: "Error"  
-            // }
             return req.reject(200,'thread not found')
         } 
         const hasAnswers = await tx.read(Answer).where({ thread_ID: ID });
