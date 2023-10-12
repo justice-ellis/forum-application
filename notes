@@ -1,2 +1,14 @@
 //    "@sap/xsenv": "^4.0.0",
 //     "@sap/xssec": "^3.3.5",
+
+
+// 1. --start hana
+
+// 2. --build mta
+mbt build -t gen --mtar mta.tar
+
+// 3. -- login to cf
+cf -a login
+
+// 4. --deploy mta
+cf deploy gen/mta.tar

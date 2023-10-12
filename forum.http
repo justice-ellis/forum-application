@@ -1,7 +1,13 @@
 
 ###
 #
-#  Browse Threads
+#  Browse Threads with (author) associations
+#
+GET http://localhost:4004/odata/v4/service/thread/Threads?$expand=author
+
+###
+#
+#  Browse Threads 
 #
 GET http://localhost:4004/odata/v4/service/thread/Threads
 
