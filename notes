@@ -1,0 +1,9 @@
+
+// --configure Sap Hana Cloud in the project
+cds add hana --for production
+
+// --enable XSUAA-based Authentication
+cds add xsuaa --for production
+
+// --create xs-security.json
+cds compile srv/ --to xsuaa > xs-security.json

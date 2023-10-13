@@ -1,1 +1,28 @@
-{}
+
+{
+    "[development]": {
+      "auth": {
+       "passport": {
+        "strategy": "mock",
+        "users": {
+          "thread.viewer@tester.sap.com": {
+           "password": "initial",
+           "ID": "threadviewer",
+           "userAttributes": {
+             "email": "thread.viewer@tester.sap.com"
+           },
+           "roles": ["ThreadViewer"]
+         },
+          "thread.manager@tester.sap.com": {
+           "password": "initial",
+           "ID": "threadmanager",
+           "userAttributes": {
+             "email": "thread.manager@tester.sap.com"
+           },
+           "roles": ["ThreadManager"]
+         }
+        }
+       }
+      }
+     }
+    }

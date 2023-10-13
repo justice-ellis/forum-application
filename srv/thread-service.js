@@ -55,5 +55,32 @@ module.exports = (srv) => {
         }
         
     });  
+
+    
+    // srv.after('CREATE', 'Threads', async(req, res) => {
+    //     //const { ID } = req.data; 
+    //     // const tx = cds.transaction(req);
+       
+    //     // await tx.update(Thread)
+    //     //         .set({ upvotes: thread.upvotes-- })
+    //     //         .where({ ID });
+
+        
+    //     const tx = cds.transaction(req);
+    //     const { Thread } = tx.entities;
+    //     const jerr = req.ID;
+    //     // const [thread, _] = await tx.read(Thread).where({ jerr  });
+    //     // console.log(thread);
+    //     console.log(res.req.user);
+    //     console.log(req);
+    //     console.log(req.ID);
+
+    //     return {
+    //         code: 200,
+    //         message: "Thread created Succesfully",
+    //         status: "Success"
+    //     }
+        
+    // }); 
 }
 
