@@ -1,0 +1,16 @@
+{
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.ForumViewer",
+      "description": "ForumViewer"
+    },
+    {
+      "name": "$XSAPPNAME.ForumManager",
+      "description": "ForumManager"
+    }
+  ],
+  "attributes": [],
+  "role-templates": [],
+  "xsappname": "forum-app",
+  "tenant-mode": "dedicated"
+}

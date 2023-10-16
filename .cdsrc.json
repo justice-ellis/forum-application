@@ -1,1 +1,28 @@
-{}
+
+{
+    "[development]": {
+      "auth": {
+       "passport": {
+        "strategy": "mock",
+        "users": {
+          "forum.viewer@tester.sap.com": {
+           "password": "initial",
+           "ID": "forumviewer",
+           "userAttributes": {
+             "email": "forum.viewer@tester.sap.com"
+           },
+           "roles": ["ForumViewer"]
+         },
+          "forum.manager@tester.sap.com": {
+           "password": "initial",
+           "ID": "forummanager",
+           "userAttributes": {
+             "email": "forum.manager@tester.sap.com"
+           },
+           "roles": ["ForumManager"]
+         }
+        }
+       }
+      }
+     }
+    }

@@ -6,12 +6,13 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@sap/approuter": "^14.3.3",
     "@sap/cds": "^7.3.0",
     "@sap/cds-dk": "^7.3.0",
     "@sap/cds-hana": "^2",
-    "@sap/xssec": "^3.3.5",
+    "@sap/xssec": "^3",
     "express": "^4",
-    "passport": "^0.6.0"
+    "passport": "^0"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
@@ -23,7 +24,8 @@
   "cds": {
     "requires": {
       "[production]": {
-        "db": "hana"
+        "db": "hana",
+        "auth": "xsuaa"
       }
     },
     "hana": {
