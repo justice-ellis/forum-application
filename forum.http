@@ -9,7 +9,7 @@ GET http://localhost:4004/odata/v4/service/thread/Threads
 #
 #  Browse Authors
 #
-GET http://localhost:4004/odata/v4/service/thread/Authors
+GET http://localhost:4004/odata/v4/service/thread/Authors?$search=john
 
 ###
 #

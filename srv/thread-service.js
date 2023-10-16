@@ -53,7 +53,11 @@ module.exports = (srv) => {
             message: "Thread downVoted Succesfully",
             status: "Success"
         }
-        
     });  
+
+    srv.on('READ', 'Author', async(req) => {
+        console.log(req._query);
+        next();
+    });
 }
 
