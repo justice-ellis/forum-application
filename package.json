@@ -11,8 +11,7 @@
     "@sap/cds-dk": "^7.3.0",
     "@sap/cds-hana": "^2",
     "@sap/xssec": "^3",
-    "express": "^4",
-    "passport": "^0"
+    "express": "^4"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
@@ -25,7 +24,31 @@
     "requires": {
       "[production]": {
         "db": "hana",
-        "auth": "xsuaa"
+        "auth": {
+          "kind": "mocked",
+          "users": {
+            "forum.viewer@tester.sap.com": {
+              "password": "initial",
+              "ID": "forumviewer",
+              "userAttributes": {
+                "email": "forum.viewer@tester.sap.com"
+              },
+              "roles": [
+                "ForumViewer"
+              ]
+            },
+            "forum.manager@tester.sap.com": {
+              "password": "initial",
+              "ID": "forummanager",
+              "userAttributes": {
+                "email": "forum.manager@tester.sap.com"
+              },
+              "roles": [
+                "ForumManager"
+              ]
+            }
+          }
+        }
       }
     },
     "hana": {

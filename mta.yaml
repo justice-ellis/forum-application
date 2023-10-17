@@ -16,14 +16,13 @@ modules:
     parameters:
       buildpack: nodejs_buildpack
     build-parameters:
-      builder: npm-ci
+      builder: npm
     provides:
       - name: srv-api # required by consumers of CAP services (e.g. approuter)
         properties:
           srv-url: ${default-url}
     requires:
       - name: forum-app-db
-      - name: forum-app-auth
 
   - name: forum-app-db-deployer
     type: hdb
@@ -33,34 +32,9 @@ modules:
     requires:
       - name: forum-app-db
 
-  - name: forum-app
-    type: approuter.nodejs
-    path: app/router
-    parameters:
-      keep-existing-routes: true
-      disk-quota: 256M
-      memory: 256M
-    requires:
-      - name: srv-api
-        group: destinations
-        properties:
-          name: srv-api # must be used in xs-app.json as well
-          url: ~{srv-url}
-          forwardAuthToken: true
-      - name: forum-app-auth
-
 resources:
   - name: forum-app-db
     type: com.sap.xs.hdi-container
     parameters:
       service: hana
       service-plan: hdi-shared
-  - name: forum-app-auth
-    type: org.cloudfoundry.managed-service
-    parameters:
-      service: xsuaa
-      service-plan: application
-      path: ./xs-security.json
-      config:
-        xsappname: forum-app
-        tenant-mode: dedicated
