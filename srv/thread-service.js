@@ -56,20 +56,17 @@ module.exports = (srv) => {
         
     });  
 
-    // srv.after('CREATE', 'Threads', async(req,res) => {
-    //     const userId = res.req.user.ID;
-    //     const {ID}=req
-    //     console.log(ID, userId);
-    //     // const tx = cds.transaction(req);
-    //     // const { Threads } = tx.entities;
-    //     const data = await SELECT.from(Threads).where({ID});
-    //     console.log(data);
-    //     const updatedThread = await UPDATE (Threads,ID) .with ({
-    //         author_ID: userId
-    //       })
-    //     console.log("updatedThread ", updatedThread);
-    //     //return
-    // });
+    srv.after('CREATE', 'Threads', async(req,res) => {
+        const userId = res.req.user.ID;
+        const {ID}=req
+        const tx = cds.transaction(req);
+        const { Thread } = tx.entities;
+        await SELECT.from(Thread).where({ID});
+        await UPDATE (Thread,ID).with({
+            author_ID: userId
+          })
+        return 
+    });
 }
 
 
