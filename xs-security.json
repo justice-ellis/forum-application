@@ -10,7 +10,16 @@
     }
   ],
   "attributes": [],
-  "role-templates": [],
+  "role-templates": [
+    {
+      "name": "ForumManager",
+      "description": "generated",
+      "scope-references": [
+        "$XSAPPNAME.ForumManager"
+      ],
+      "attribute-references": []
+    }
+  ],
   "xsappname": "forum-app",
   "tenant-mode": "dedicated"
 }
