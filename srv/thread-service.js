@@ -26,10 +26,10 @@ module.exports = (srv) => {
         const { ID } = req.data;
         const tx = cds.transaction(req);
         const { Thread } = tx.entities;
-        const [thread, _] = await tx.read(Thread).where({ ID });
+        const [thread] = await tx.read(Thread).where({ ID: ID });
         await tx.update(Thread)
-                .set({ upvotes: thread.upvotes++ })
-                .where({ ID });
+                .set({ upvotes: (thread.upvotes += 1) })
+                .where({ ID: ID });
         console.log(thread);
         return {
             code: 200,
@@ -43,10 +43,10 @@ module.exports = (srv) => {
         const { ID } = req.data; 
         const tx = cds.transaction(req);
         const { Thread } = tx.entities;
-        const [thread, _] = await tx.read(Thread).where({ ID });
+        const [thread] = await tx.read(Thread).where({ ID: ID });
         await tx.update(Thread)
-                .set({ upvotes: thread.upvotes-- })
-                .where({ ID });
+                .set({ downvotes: (thread.downvotes += 1) })
+                .where({ ID: ID });
         console.log(thread);
         return {
             code: 200,
