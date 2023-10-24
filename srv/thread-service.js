@@ -30,7 +30,6 @@ module.exports = (srv) => {
         await tx.update(Thread)
                 .set({ upvotes: (thread.upvotes += 1) })
                 .where({ ID: ID });
-        console.log(thread);
         return {
             code: 200,
             message: "Thread upVoted Succesfully",
@@ -47,7 +46,6 @@ module.exports = (srv) => {
         await tx.update(Thread)
                 .set({ downvotes: (thread.downvotes += 1) })
                 .where({ ID: ID });
-        console.log(thread);
         return {
             code: 200,
             message: "Thread downVoted Succesfully",
