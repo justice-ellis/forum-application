@@ -65,6 +65,20 @@ module.exports = (srv) => {
           })
         return 
     });
+
+    srv.on('updateAnswer', async(req, res) => {
+        const { ID, content } = req.data; 
+        const tx = cds.transaction(req);
+        const { Answer } = tx.entities;
+        await UPDATE (Answer,ID).with({
+            content: content
+        });
+        return {
+            code: 200,
+            message: "Answer Updated Succesfully",
+            status: "Success"
+        }
+    });
 }
 
 

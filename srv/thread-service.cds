@@ -45,4 +45,5 @@ service ThreadService {
     action deleteThread(ID: String) returns message;
     action upvoteThread(ID: String) returns message;
     action downvoteThread(ID: String) returns message;
+    action updateAnswer(ID: String, content: String) returns message;
 }
