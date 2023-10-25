@@ -79,4 +79,17 @@ Authorization: Basic forum.manager@tester.sap.com:initial
 	"content": "QUADD CONTENT"
 }
 
+###
+#
+#  update Thread
+#
+POST http://localhost:4004/odata/v4/service/thread/updateThread
+Content-Type: application/json
+Authorization: Basic forum.manager@tester.sap.com:initial
+
+{
+    "ID": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+	"title": "TOMBA THREAD",
+	"content": "TOMBA CONTENT"
+}
 

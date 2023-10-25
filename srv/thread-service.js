@@ -79,6 +79,22 @@ module.exports = (srv) => {
             status: "Success"
         }
     });
+
+    srv.on('updateThread', async(req, res) => {
+        const { ID, content, title } = req.data; 
+        const tx = cds.transaction(req);
+        const { Thread } = tx.entities;
+        const thread = await SELECT.from(Thread).where({ID});
+        await UPDATE (Thread,ID).with({
+            title: title,
+            content: content
+        });
+        return {
+            code: 200,
+            message: "Thread Updated Succesfully",
+            status: "Success"
+        }
+    });
 }
 
 
